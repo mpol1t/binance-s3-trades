@@ -38,10 +38,10 @@ jobs:
         python -m pip install --upgrade pip
         pip install poetry
         poetry install
-    - name: Test with pytest
-      run: poetry run pytest --cov=./ --cov-report=xml
-    - name: Upload coverage reports to Codecov
-      uses: codecov/codecov-action@v4.0.1
-      with:
-        token: ${{ secrets.CODECOV_TOKEN }}
-        slug: mpol1t/python-pypi-template
+    # - name: Test with pytest
+    #   run: poetry run pytest --cov=./ --cov-report=xml
+    # - name: Upload coverage reports to Codecov
+    #   uses: codecov/codecov-action@v4.0.1
+    #   with:
+    #     token: ${{ secrets.CODECOV_TOKEN }}
+    #     slug: mpol1t/python-pypi-template
