@@ -1,68 +1,69 @@
-# Project Name
-> A brief description of what the project does and who it's for.
+# binance-s3-trades
+Seamlessly list and download Binance spot-trade `.zip` archives from Binance’s public S3 bucket.
 
-## Installation
-This project uses [Poetry](https://python-poetry.org/) for dependency management and packaging. To install this project, first ensure that you have Poetry installed on your system. If you do not have Poetry installed, you can install it by following the instructions on the [official Poetry documentation](https://python-poetry.org/docs/).
+## 📦 Installation
 
-Once Poetry is installed, you can install this project by running:
+**From PyPI**  
 ```bash
-poetry install
+pip install binance-s3-trades
 ```
 
-This command will install all dependencies required for the project.
+**From source**  
+```bash
+git clone https://github.com/mpolit/binance-s3-trades.git
+cd binance-s3-trades
+poetry install
+```
 
 ## Usage
-Here's a quick start guide or basic usage example:
+
+### Python API
 ```python
-from project_name import main_function
-main_function()
+from binance_s3_trades import BinanceTradeDownloader
+
+dl = BinanceTradeDownloader(
+    max_workers=4,
+    log_level="INFO"
+)
+
+# List all BTCUSDT trades for Jan–Mar 2023
+keys = dl.list_files(symbols="BTCUSDT", start="2023-01", end="2023-03")
+print(keys)
+
+# Dry-run download into ./data
+dl.download_all(
+    target_dir="./data",
+    symbols="BTCUSDT",
+    start="2023-01",
+    end="2023-03",
+    dry_run=True
+)
 ```
 
-Ensure to replace `project_name` and `main_function` with actual names relevant to your project.
+### Command-Line Interface
 
-## Development Setup
-To set up a local development environment for this project, follow these steps:
+After installation, use the `binance-s3-trades` command:
 
-1. Clone the project repository:
 ```bash
-git clone https://github.com/yourusername/projectname.git
-cd projectname
+# List matching files
+binance-s3-trades list \
+  --symbol BTCUSDT \
+  --start 2023-01 \
+  --end   2023-03
+
+# Download (with overwriting or dry-run)
+binance-s3-trades download ./data \
+  --symbol BTCUSDT \
+  --start 2023-01 \
+  --dry-run
 ```
 
-2. Install the project and its dependencies using Poetry:
-```bash
-poetry install
-```
-
-## Running Tests
-This project uses pytest for testing. To run tests, use the following command:
-```bash
-poetry run pytest
-```
-
-## Pre-commit Hooks
-This project uses pre-commit hooks to ensure code quality and consistency. After cloning the project, you need to set up pre-commit on your local machine:
-
-1. Install the git hook scripts by running:
-```bash
-pre-commit install
-```
-
-This command sets up the pre-commit hooks for your local repository. Now, pre-commit will run automatically on `git commit` to check your changes against the configured hooks.
+Run `binance-s3-trades --help` for full options.
 
 ## Contributing
-We welcome contributions! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests to us.
+
+Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines and our code of conduct.
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
-
-## After Cloning [!]
-
-Must update all dependecies using:
-
-```bash
-poetry update
-```
-
-Change/set up secrets!
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
