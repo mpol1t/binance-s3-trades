@@ -1,85 +1,118 @@
-# Contributing to ProjectName
+# Contributing to binance-s3-trades
 
-First off, thank you for considering contributing to ProjectName. It's people like you that make ProjectName such a great tool.
+Thank you for considering contributing to **binance-s3-trades**! We welcome bug reports, feature requests, and pull requests.
+
+---
 
 ## Code of Conduct
 
-This project and everyone participating in it is governed by the ProjectName [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to [your-email@example.com].
+This project is governed by the [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you agree to abide by its terms. Please report unacceptable behavior to michal.polit@monadic.eu.
 
-## I don't want to read this whole thing I just have a question!!!
+---
 
-> Note: Please don't file an issue to ask a question. You'll get faster results by using the resources below.
+## Getting Started
 
-- Check the FAQs in our documentation
-- Post your question on [appropriate forum or community channel]
+1. **Fork** the repository on GitHub:  
+   https://github.com/mpolit/binance-s3-trades  
+2. **Clone** your fork locally:  
+   ```bash
+   git clone https://github.com/yourusername/binance-s3-trades.git
+   cd binance-s3-trades
+   ```
+3. **Install** dependencies and activate virtualenv:  
+   ```bash
+   poetry install
+   poetry shell   # optional
+   ```
 
-## What should I know before I get started?
+---
 
-### Project Architecture
+## Project Structure
 
-Here is a brief overview of how the project is structured:
+- `src/binance_s3_trades/` – core library  
+  - `downloader.py` – S3 listing & download logic  
+  - `cli.py`        – Typer-powered command-line interface  
+- `tests/`           – unit tests (uses pytest & mocks)  
+- `.github/`         – GitHub workflows, issue & PR templates  
+- `pyproject.toml`   – project metadata & dependencies  
 
-- Describe the major components of your project
-- Provide a high-level architecture overview
-- Point to any specific documentation for newcomers
+---
 
-## How Can I Contribute?
+## Reporting Bugs
 
-### Reporting Bugs
+Before filing a bug, please:
 
-#### Before Submitting A Bug Report
+1. Search existing issues: https://github.com/mpolit/binance-s3-trades/issues  
+2. Verify you’re running the latest `main` branch or latest PyPI release.  
+3. Include in your report:
+   - A clear, descriptive title.
+   - Steps to reproduce.
+   - Expected vs. actual behavior.
+   - Python version, OS, and installed package versions (`poetry show`).
 
-- Check the FAQs in the documentation for a list of common questions and problems.
-- Determine [which repository](https://github.com/yourusername) the problem should be reported in.
-- Check if the issue has already been reported. If it has **and the issue is still open**, add a comment to the existing issue instead of opening a new one.
+---
 
-#### How Do I Submit A (Good) Bug Report?
+## Suggesting Enhancements
 
-Bugs are tracked as [GitHub issues](https://github.com/yourusername/projectname/issues). Create an issue and provide the following information:
+1. Check if a similar feature request exists; if not, open a new issue.  
+2. Describe your use case and rationale.  
+3. Optionally, sketch out a short example of how the API might look.
 
-- Use a clear and descriptive title for the issue to identify the problem.
-- Describe the exact steps which reproduce the problem in as many details as possible.
-- Provide specific examples to demonstrate the steps.
+---
 
-### Suggesting Enhancements
+## Your First Code Contribution
 
-This section guides you through submitting an enhancement suggestion for ProjectName, including completely new features and minor improvements to existing functionality.
+Look for issues labeled **help wanted** or **good first issue**:
 
-### Your First Code Contribution
+- https://github.com/mpolit/binance-s3-trades/labels/help%20wanted  
+- https://github.com/mpolit/binance-s3-trades/labels/good%20first%20issue  
 
-Unsure where to begin contributing to ProjectName? You can start by looking through these `beginner` and `help-wanted` issues:
+---
 
-- [Beginner issues](https://github.com/yourusername/projectname/labels/beginner) - issues which should only require a few lines of code, and a test or two.
-- [Help wanted issues](https://github.com/yourusername/projectname/labels/help%20wanted) - issues which should be a bit more involved than `beginner` issues.
+## Pull Request Guidelines
 
-### Pull Requests
+1. Fork, create a feature branch, and commit logically‐grouped changes.  
+2. Base your branch off `main`.  
+3. Ensure all tests pass:  
+   ```bash
+   poetry run pytest
+   ```
+4. Include or update unit tests for new functionality.  
+5. Adhere to PEP 8 and project style (`flake8`).  
+6. Don’t include issue numbers in the PR title—reference them in the description.  
+7. Provide screenshots or logs if relevant.
 
-- Fill in [the required template](PULL_REQUEST_TEMPLATE.md)
-- Do not include issue numbers in the PR title
-- Include screenshots and animated GIFs in your pull request whenever possible.
-- Follow the [Python style guide](https://www.python.org/dev/peps/pep-0008/).
-- Include thoughtful comments and documentation.
+---
 
-## Styleguides
+## Style Guides
 
-### Git Commit Messages
+### Commit Messages
 
-- Use the present tense ("Add feature" not "Added feature")
-- Use the imperative mood ("Move cursor to..." not "Moves cursor to...")
-- Limit the first line to 72 characters or less
-- Reference issues and pull requests liberally after the first line
+- Use the imperative mood: “Add feature”, not “Added feature”.  
+- Keep the first line ≤ 72 characters.  
+- Separate subject from body with a blank line.  
+- Reference issues/PRs: “Fixes #123”.
 
-### Python Styleguide
+### Python Code
 
-- All Python code must adhere to the [PEP 8](https://www.python.org/dev/peps/pep-0008/) style guide.
-- Use [Docstrings](https://www.python.org/dev/peps/pep-0257/) for code documentation.
+- Follow [PEP 8](https://www.python.org/dev/peps/pep-0008/).  
+- Use docstrings for all public functions and classes.  
+- Type‐annotate function signatures.
 
-## Additional Notes
+---
 
-### Issue and Pull Request Labels
+## Issue & PR Labels
 
-This section lists the labels we use to help us track and manage issues and pull requests.
+We use these labels to track work:
 
-## Conclusion
+- **bug** – a confirmed defect  
+- **enhancement** – new feature requests  
+- **help wanted** – contributions welcome  
+- **good first issue** – suitable for newcomers  
+- **question** – usage or design questions  
 
-Your contributions are highly appreciated. We look forward to seeing your suggestions, bug reports, and pull requests.
+---
+
+## Thank You!
+
+Your contributions make this library better for everyone. We look forward to your bug reports, ideas, and pull requests!
