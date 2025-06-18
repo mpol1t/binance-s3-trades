@@ -1,53 +1,65 @@
 repos:
-  # Basic file checks
+  # Basic file sanity checks
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v5.0.0
     hooks:
-      - id: check-added-large-files
-      - id: check-merge-conflict
       - id: end-of-file-fixer
       - id: trailing-whitespace
+      - id: check-merge-conflict
+      - id: check-added-large-files
       - id: check-yaml
       - id: check-toml
       - id: check-json
 
-  # Automatic code formatting
+  # Code formatting with Black
   - repo: https://github.com/psf/black
-    rev: 24.3.0
+    rev: 25.1.0
     hooks:
       - id: black
+        language_version: python3.11
         args: [--line-length=79]
 
-  # Import sorting (Black‐compatible)
+  # Import sorting (Black-compatible)
   - repo: https://github.com/pre-commit/mirrors-isort
     rev: v5.10.1
     hooks:
       - id: isort
         args: [--profile=black]
 
-  # Linting & autofixing (replaces Flake8 + many plugins)
+  # Ultra-fast linting + auto-fix
   - repo: https://github.com/charliermarsh/ruff-pre-commit
-    rev: v0.0.277
+    rev: v0.12.0
     hooks:
       - id: ruff
         args: [--fix, --line-length=79]
 
   # Static type checking
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v1.5.1
+    rev: v1.16.1
     hooks:
       - id: mypy
         args: [--ignore-missing-imports]
 
-  # Security vulnerability scan
-  - repo: https://github.com/pyupio/safety
-    rev: v1.10.3
+  # Dependency vulnerability check
+  - repo: https://github.com/Lucas-C/pre-commit-hooks-safety
+    rev: v1.4.2
     hooks:
-      - id: safety
+      - id: python-safety-dependencies-check
         args: [--full-report]
 
-  # Optional: catch common Python security issues
+  # Code security analysis
   - repo: https://github.com/PyCQA/bandit
-    rev: 1.7.8
+    rev: 1.8.5
     hooks:
       - id: bandit
+
+  # Semantic pattern checks (optional)
+  - repo: https://github.com/returntocorp/semgrep
+    rev: v1.89.0
+    hooks:
+      - id: semgrep
+        args:
+          - --config=p/python
+          - --config=p/security-audit
+          - --config=p/ci
+          - --error

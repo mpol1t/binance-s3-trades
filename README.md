@@ -1,14 +1,14 @@
 # binance-s3-trades
 Seamlessly list and download Binance spot-trade `.zip` archives from Binance’s public S3 bucket.
 
-## 📦 Installation
+## Installation
 
-**From PyPI**  
+**From PyPI**
 ```bash
 pip install binance-s3-trades
 ```
 
-**From source**  
+**From source**
 ```bash
 git clone https://github.com/mpolit/binance-s3-trades.git
 cd binance-s3-trades

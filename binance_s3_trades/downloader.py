@@ -111,7 +111,7 @@ class BinanceTradeDownloader:
 
                 # Filter by symbol
                 if symbol_list:
-                    parts = key[len(self.prefix):].split("/", 1)
+                    parts = key[len(self.prefix) :].split("/", 1)
                     if not parts or parts[0] not in symbol_list:
                         continue
 
@@ -155,7 +155,7 @@ class BinanceTradeDownloader:
 
         :raises DownloadError: if retries are exhausted
         """
-        rel_path = key[len(self.prefix):]
+        rel_path = key[len(self.prefix) :]
         local_path = os.path.join(target_dir, rel_path)
 
         if dry_run:
@@ -204,7 +204,7 @@ class BinanceTradeDownloader:
 
         if dry_run:
             for key in keys:
-                rel_path = key[len(self.prefix):]
+                rel_path = key[len(self.prefix) :]
                 local_path = os.path.join(target_dir, rel_path)
                 self.logger.info(
                     f"[dry-run] Would download: {key} -> {local_path}"
