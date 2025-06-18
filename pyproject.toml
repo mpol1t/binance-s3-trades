@@ -1,24 +1,35 @@
 [tool.poetry]
-name = "python-pypi-template"
+name = "binance-s3-trades"
 version = "0.1.0"
-description = ""
+description = "Seamlessly list and download Binance spot trade .zip files from the public S3 bucket"
 authors = ["Michal Polit <mpolit@protonmail.com>"]
 readme = "README.md"
+license = "MIT"
+keywords = ["binance", "s3", "trades", "downloader"]
+
+[tool.poetry.urls]
+homepage = "https://github.com/mpolit/binance-s3-trades"
+repository = "https://github.com/mpolit/binance-s3-trades"
 
 [tool.poetry.dependencies]
 python = "^3.11"
-
+boto3 = "^1.38.38"
+tqdm = "^4.67.1"
+typer = "^0.16.0"
 
 [tool.poetry.group.test.dependencies]
 pytest = "^8.4.1"
-hypothesis = "^6.135.11"
 pytest-cov = "^6.2.1"
-
 
 [tool.poetry.group.dev.dependencies]
 pre-commit = "^4.2.0"
-flake8 = "^7.2.0"
+isort = "^6.0.1"
+black = "^25.1.0"
+ruff = "^0.12.0"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+binance-s3-trades = "binance_s3_trades.cli:app"
