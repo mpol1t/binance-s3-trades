@@ -1,6 +1,6 @@
 [project]
 name = "binance-s3-trades"
-version = "0.2.1"
+version = "0.2.2"
 description = "Seamlessly list and download Binance spot trade .zip files from the public S3 bucket"
 readme = "README.md"
 license = "MIT"
