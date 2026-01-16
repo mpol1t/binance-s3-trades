@@ -1,69 +1,126 @@
 # binance-s3-trades
-Seamlessly list and download Binance spot-trade `.zip` archives from Binance’s public S3 bucket.
+
+Seamlessly list and download Binance spot trade `.zip` archives from Binance’s public S3 bucket.
+
+This project provides:
+- a Python API for listing and downloading trade archives
+- a command-line interface built with Typer
+- parallel downloads using boto3 with unsigned S3 access
+
+---
 
 ## Installation
 
-**From PyPI**
-```bash
-pip install binance-s3-trades
-```
+### From PyPI
 
-**From source**
-```bash
+pip install binance-s3-trades
+
+### From source
+
 git clone https://github.com/mpolit/binance-s3-trades.git
 cd binance-s3-trades
 poetry install
-```
 
-## Usage
+---
 
-### Python API
-```python
-from binance_s3_trades import BinanceTradeDownloader
+## Python API
 
-dl = BinanceTradeDownloader(
+### Listing available trade archives
+
+from binance_s3_trades.downloader import create_s3_client, list_files
+
+s3 = create_s3_client(
+    region="ap-northeast-1",
     max_workers=4,
-    log_level="INFO"
 )
 
-# List all BTCUSDT trades for Jan–Mar 2023
-keys = dl.list_files(symbols="BTCUSDT", start="2023-01", end="2023-03")
-print(keys)
-
-# Dry-run download into ./data
-dl.download_all(
-    target_dir="./data",
-    symbols="BTCUSDT",
+keys = list_files(
+    s3_client=s3,
+    bucket_name="data.binance.vision",
+    prefix="data/spot/monthly/trades/",
+    symbols=["BTCUSDT"],
     start="2023-01",
     end="2023-03",
-    dry_run=True
 )
-```
 
-### Command-Line Interface
+print(keys)
 
-After installation, use the `binance-s3-trades` command:
+---
 
-```bash
-# List matching files
+### Downloading trade archives
+
+from binance_s3_trades.downloader import (
+    create_s3_client,
+    list_files,
+    download_all,
+)
+
+s3 = create_s3_client(
+    region="ap-northeast-1",
+    max_workers=4,
+)
+
+keys = list_files(
+    s3_client=s3,
+    bucket_name="data.binance.vision",
+    prefix="data/spot/monthly/trades/",
+    symbols=["BTCUSDT"],
+    start="2023-01",
+    end="2023-03",
+)
+
+download_all(
+    s3_client=s3,
+    bucket_name="data.binance.vision",
+    prefix="data/spot/monthly/trades/",
+    keys=keys,
+    target_dir="./data",
+    overwrite=False,
+    dry_run=False,
+    max_workers=4,
+)
+
+---
+
+## Command-Line Interface
+
+After installation, the binance-s3-trades command is available.
+
+### List matching files
+
 binance-s3-trades list \
   --symbol BTCUSDT \
   --start 2023-01 \
-  --end   2023-03
+  --end 2023-03
 
-# Download (with overwriting or dry-run)
+### Download files
+
+binance-s3-trades download ./data \
+  --symbol BTCUSDT \
+  --start 2023-01 \
+  --overwrite
+
+### Dry-run mode
+
 binance-s3-trades download ./data \
   --symbol BTCUSDT \
   --start 2023-01 \
   --dry-run
-```
 
-Run `binance-s3-trades --help` for full options.
+Run the following for full options:
+
+binance-s3-trades --help
+
+---
 
 ## Contributing
 
-Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines and our code of conduct.
+Contributions are welcome.
+Please open an issue or pull request on GitHub.
+
+---
 
 ## License
 
-This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
+This project is licensed under the MIT License.
+See the LICENSE file for details.
