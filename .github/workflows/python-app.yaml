@@ -22,7 +22,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install "poetry==2.2.1"
         poetry --version
-        poetry lock --check
+        poetry check
         poetry install --no-interaction --no-ansi
   test:
     runs-on: ubuntu-latest
