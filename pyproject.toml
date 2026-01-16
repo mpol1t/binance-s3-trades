@@ -1,13 +1,15 @@
-[tool.poetry]
+[project]
 name = "binance-s3-trades"
-version = "0.2.0"
+version = "0.1.0"
 description = "Seamlessly list and download Binance spot trade .zip files from the public S3 bucket"
-authors = ["Michal Polit <mpolit@protonmail.com>"]
 readme = "README.md"
 license = "MIT"
+authors = [{ name = "Michal Polit", email = "mpolit@protonmail.com" }]
 keywords = ["binance", "s3", "trades", "downloader"]
+requires-python = ">=3.13,<4.0"
+dynamic = ["dependencies"]
 
-[tool.poetry.urls]
+[project.urls]
 homepage = "https://github.com/mpolit/binance-s3-trades"
 repository = "https://github.com/mpolit/binance-s3-trades"
 
@@ -34,9 +36,6 @@ boto3-stubs = {extras = ["essential"], version = "^1.42.29"}
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
-
-[tool.poetry.scripts]
-binance-s3-trades = "binance_s3_trades.cli:app"
 
 [tool.black]
 line-length = 100
