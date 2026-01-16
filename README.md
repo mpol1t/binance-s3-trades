@@ -13,13 +13,16 @@ This project provides:
 
 ### From PyPI
 
+```bash
 pip install binance-s3-trades
-
+```
 ### From source
 
+```bash
 git clone https://github.com/mpolit/binance-s3-trades.git
 cd binance-s3-trades
 poetry install
+```
 
 ---
 
@@ -27,6 +30,7 @@ poetry install
 
 ### Listing available trade archives
 
+```python
 from binance_s3_trades.downloader import create_s3_client, list_files
 
 s3 = create_s3_client(
@@ -44,11 +48,14 @@ keys = list_files(
 )
 
 print(keys)
+```
 
 ---
 
 ### Downloading trade archives
 
+
+```python3
 from binance_s3_trades.downloader import (
     create_s3_client,
     list_files,
@@ -79,6 +86,7 @@ download_all(
     dry_run=False,
     max_workers=4,
 )
+```
 
 ---
 
@@ -88,28 +96,36 @@ After installation, the binance-s3-trades command is available.
 
 ### List matching files
 
+```bash
 binance-s3-trades list \
   --symbol BTCUSDT \
   --start 2023-01 \
   --end 2023-03
+```
 
 ### Download files
 
+```bash
 binance-s3-trades download ./data \
   --symbol BTCUSDT \
   --start 2023-01 \
   --overwrite
+```
 
 ### Dry-run mode
 
+```bash
 binance-s3-trades download ./data \
   --symbol BTCUSDT \
   --start 2023-01 \
   --dry-run
+```
 
 Run the following for full options:
 
+```bash
 binance-s3-trades --help
+```
 
 ---
 
