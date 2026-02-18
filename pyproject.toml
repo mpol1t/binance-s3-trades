@@ -15,7 +15,7 @@ repository = "https://github.com/mpolit/binance-s3-trades"
 
 [tool.poetry.dependencies]
 python = "^3.13"
-boto3 = "1.42.49"
+boto3 = "1.42.51"
 typer = "^0.23.1"
 
 [tool.poetry.group.test.dependencies]
