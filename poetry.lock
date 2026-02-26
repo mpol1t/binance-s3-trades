@@ -3209,18 +3209,18 @@ doc = ["Sphinx", "sphinx-rtd-theme"]
 
 [[package]]
 name = "semgrep"
-version = "1.151.0"
+version = "1.153.0"
 description = "Lightweight static analysis for many languages. Find bug variants with patterns that look like source code."
 optional = false
 python-versions = ">=3.10"
 groups = ["dev"]
 files = [
-    {file = "semgrep-1.151.0-cp310.cp311.cp312.cp313.cp314.py310.py311.py312.py313.py314-none-macosx_10_14_x86_64.whl", hash = "sha256:f4e15e3346bee1216c0bfe8f89456bd63e6ebfab4ab7be57067db02bcc0b2e14"},
-    {file = "semgrep-1.151.0-cp310.cp311.cp312.cp313.cp314.py310.py311.py312.py313.py314-none-macosx_11_0_arm64.whl", hash = "sha256:7e500831cc53bfc55e7c1a8a0dd63d28d06d31c88e6ca8ead12c878cf3ddcd2c"},
-    {file = "semgrep-1.151.0-cp310.cp311.cp312.cp313.cp314.py310.py311.py312.py313.py314-none-musllinux_1_0_aarch64.manylinux2014_aarch64.whl", hash = "sha256:c9d61dc8c24615bfaedb3c08bd40d328ab3d33ca1f15600f8179ef61de599694"},
-    {file = "semgrep-1.151.0-cp310.cp311.cp312.cp313.cp314.py310.py311.py312.py313.py314-none-musllinux_1_0_x86_64.manylinux2014_x86_64.whl", hash = "sha256:2ffe0351049ce466953043a4a01f91c56ea1acfd179c9ade0c0ff17d2b2861aa"},
-    {file = "semgrep-1.151.0-cp310.cp311.cp312.cp313.cp314.py310.py311.py312.py313.py314-none-win_amd64.whl", hash = "sha256:9a63d9b29eac99a0a916466cd8de7fd1f1a9fab16b5ae8afe3dd6496292505d6"},
-    {file = "semgrep-1.151.0.tar.gz", hash = "sha256:2f82ea173811727a5d64df5490f4d2154a75abe570882524996eebd588264fe0"},
+    {file = "semgrep-1.153.0-cp310.cp311.cp312.cp313.cp314.py310.py311.py312.py313.py314-none-macosx_10_14_x86_64.whl", hash = "sha256:57ea56611e3efa9df99900cde14e7919bb5b02bdc214fa170b1f143de66d34be"},
+    {file = "semgrep-1.153.0-cp310.cp311.cp312.cp313.cp314.py310.py311.py312.py313.py314-none-macosx_11_0_arm64.whl", hash = "sha256:ce172c120025b807939f4377610c959a2254cdde2171aa2e6f2d3c02b6ffcd7f"},
+    {file = "semgrep-1.153.0-cp310.cp311.cp312.cp313.cp314.py310.py311.py312.py313.py314-none-musllinux_1_0_aarch64.manylinux2014_aarch64.whl", hash = "sha256:0ab1967229a3f2b41a92ba061fb4bf08dc4e197cfb6f7b33c872031385062840"},
+    {file = "semgrep-1.153.0-cp310.cp311.cp312.cp313.cp314.py310.py311.py312.py313.py314-none-musllinux_1_0_x86_64.manylinux2014_x86_64.whl", hash = "sha256:d78aac18ee936dfc7c2fc98fd75b5e12fd162f06e38fb1e5824a05d1e67c642b"},
+    {file = "semgrep-1.153.0-cp310.cp311.cp312.cp313.cp314.py310.py311.py312.py313.py314-none-win_amd64.whl", hash = "sha256:99136fe4ab10313ef00bcc5c8a85331b872fcd2f7914e24482b2db4c336ab809"},
+    {file = "semgrep-1.153.0.tar.gz", hash = "sha256:640981e77b439bfe83eed80e85736f002389849ef4e03a98a96d59997bc4ec62"},
 ]
 
 [package.dependencies]
@@ -3647,4 +3647,4 @@ type = ["pytest-mypy"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.13"
-content-hash = "248374cb82c01c90b70b1d1148cfd421fd7f51f054bf024c77939c3154358c18"
+content-hash = "d02566d581c69efc3bc7e382cf0900650f806bde0aa6902a53a6df1f0cbc3de2"
