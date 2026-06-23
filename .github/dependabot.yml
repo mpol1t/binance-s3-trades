@@ -9,3 +9,11 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "daily"
+    groups:
+      all-pip:
+        patterns:
+          - "*"
+      all-pip-security:
+        applies-to: security-updates
+        patterns:
+          - "*"
