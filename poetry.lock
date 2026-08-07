@@ -203,18 +203,18 @@ files = [
 
 [[package]]
 name = "boto3"
-version = "1.43.62"
+version = "1.43.63"
 description = "The AWS SDK for Python"
 optional = false
 python-versions = ">=3.10"
 groups = ["main"]
 files = [
-    {file = "boto3-1.43.62-py3-none-any.whl", hash = "sha256:0bb298e7ffd72b91615df44bf71c417df80a29d844971e5d665b8bd743a4bb35"},
-    {file = "boto3-1.43.62.tar.gz", hash = "sha256:0bf920e0739346e81c7310b685a3f783bf1fcc62ce7d5c7016508fa25c0d261f"},
+    {file = "boto3-1.43.63-py3-none-any.whl", hash = "sha256:859a8d1c50505a5cefb8629790dd34602ddb85bfd7ea5d34a362ab1793513636"},
+    {file = "boto3-1.43.63.tar.gz", hash = "sha256:647c0f0b59710ce12a49323382bb5ece1b4e02199c736d19d555330dca7e947f"},
 ]
 
 [package.dependencies]
-botocore = ">=1.43.62,<1.44.0"
+botocore = ">=1.43.63,<1.44.0"
 jmespath = ">=0.7.1,<2.0.0"
 s3transfer = ">=0.19.0,<0.20.0"
 
@@ -223,14 +223,14 @@ crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
 
 [[package]]
 name = "boto3-stubs"
-version = "1.43.62"
-description = "Type annotations for boto3 1.43.62 generated with mypy-boto3-builder 8.12.0"
+version = "1.43.63"
+description = "Type annotations for boto3 1.43.63 generated with mypy-boto3-builder 8.12.0"
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "boto3_stubs-1.43.62-py3-none-any.whl", hash = "sha256:f88b57996f667f91795310b6c6e39897e6b98a3597ae9a7b484b7ee70da881c9"},
-    {file = "boto3_stubs-1.43.62.tar.gz", hash = "sha256:a541bf0d20424ad427940b8938fff34bea28fc0d399906bdf3d193371016455a"},
+    {file = "boto3_stubs-1.43.63-py3-none-any.whl", hash = "sha256:4da5bb38e6d2baf34937818c841eed6b0dc80db434bf8f6fea2b47de69781c75"},
+    {file = "boto3_stubs-1.43.63.tar.gz", hash = "sha256:31d8d1baa9270bfdfc070657710727fc792790967ad9888864ebffb3723660f9"},
 ]
 
 [package.dependencies]
@@ -297,7 +297,7 @@ bedrock-data-automation-runtime = ["mypy-boto3-bedrock-data-automation-runtime (
 bedrock-runtime = ["mypy-boto3-bedrock-runtime (>=1.43.0,<1.44.0)"]
 billing = ["mypy-boto3-billing (>=1.43.0,<1.44.0)"]
 billingconductor = ["mypy-boto3-billingconductor (>=1.43.0,<1.44.0)"]
-boto3 = ["boto3 (==1.43.62)"]
+boto3 = ["boto3 (==1.43.63)"]
 braket = ["mypy-boto3-braket (>=1.43.0,<1.44.0)"]
 budgets = ["mypy-boto3-budgets (>=1.43.0,<1.44.0)"]
 ce = ["mypy-boto3-ce (>=1.43.0,<1.44.0)"]
@@ -678,14 +678,14 @@ xray = ["mypy-boto3-xray (>=1.43.0,<1.44.0)"]
 
 [[package]]
 name = "botocore"
-version = "1.43.62"
+version = "1.43.66"
 description = "Low-level, data-driven core of boto 3."
 optional = false
 python-versions = ">=3.10"
 groups = ["main"]
 files = [
-    {file = "botocore-1.43.62-py3-none-any.whl", hash = "sha256:76de153de1ba3e242b2e6df6a13ab8a3fb35d17db562462969e661457b63166e"},
-    {file = "botocore-1.43.62.tar.gz", hash = "sha256:94efc419c9f0f41dc2415e4b6b62f04ae21b3ce3930fac47214c4d3f361ea8b8"},
+    {file = "botocore-1.43.66-py3-none-any.whl", hash = "sha256:0fa62529579469a9224c186eba87e7e561db87dfad20c63ce5d52e427c7fa325"},
+    {file = "botocore-1.43.66.tar.gz", hash = "sha256:dde324cbe8be14b536b78f4fafe192f94fffcc70716bde804044e62495af8c3c"},
 ]
 
 [package.dependencies]
@@ -3567,14 +3567,14 @@ telegram = ["requests"]
 
 [[package]]
 name = "typer"
-version = "0.27.0"
+version = "0.27.1"
 description = "Typer, build great CLIs. Easy to code. Based on Python type hints."
 optional = false
 python-versions = ">=3.10"
 groups = ["main", "dev"]
 files = [
-    {file = "typer-0.27.0-py3-none-any.whl", hash = "sha256:6f4b27631e47f077871b7dc30e933ec0131c1390fbe0e387ea5574b5bac9ccf1"},
-    {file = "typer-0.27.0.tar.gz", hash = "sha256:629bd12ea5d13a17148125d9a264f949eb171fb3f120f9b04d85873cab054fa5"},
+    {file = "typer-0.27.1-py3-none-any.whl", hash = "sha256:53150287edd11baeb4e4722c8e394fcdf8181c0ae89485cba8d25c778d5edd56"},
+    {file = "typer-0.27.1.tar.gz", hash = "sha256:a79bef8469a79c45498e7b814ecf8d603cc7644e9acbd9e19cac0334240b18df"},
 ]
 
 [package.dependencies]
@@ -3822,4 +3822,4 @@ type = ["pytest-mypy"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.13"
-content-hash = "448d77a47b6f38f12ff5300c5a7db4de65f3d3822cb518f544bacfefb4ef585b"
+content-hash = "e5ff2738ca8c2e3d52cc6e5243d5869a2afce71745554883f58b5716c4249593"
