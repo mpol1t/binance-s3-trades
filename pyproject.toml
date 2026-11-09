@@ -15,8 +15,8 @@ repository = "https://github.com/mpolit/binance-s3-trades"
 
 [tool.poetry.dependencies]
 python = "^3.13"
-boto3 = "1.43.123"
-typer = "^0.27.3"
+boto3 = "1.43.125"
+typer = "^0.28.0"
 
 [tool.poetry.group.test.dependencies]
 pytest = "^9.2.0"
@@ -26,12 +26,12 @@ pytest-cov = "^7.1.0"
 pre-commit = "^4.7.0"
 isort = "^9.0.2"
 black = "^26.10.1"
-ruff = "^0.17.3"
+ruff = "^0.17.4"
 mypy = "^2.4.1"
 safety = "^3.7.0"
 bandit = "^1.9.4"
-semgrep = "^1.183.0"
-boto3-stubs = {extras = ["essential"], version = "^1.43.123"}
+semgrep = "^1.184.0"
+boto3-stubs = {extras = ["essential"], version = "^1.43.125"}
 
 [build-system]
 requires = ["poetry-core"]
